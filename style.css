@@ -1,0 +1,216 @@
+/* ===========================================================
+   ✨ GLOBAL STYLE
+=========================================================== */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    font-family: "Roboto", sans-serif;
+    color: #222;
+}
+
+
+/* ===========================================================
+   🟦 CHROME-STYLE TAB BAR (Sticky + Professional UI)
+=========================================================== */
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background-color: #d9d9d9;
+    padding: 0;
+    height: 42px;                 /* TAB HEIGHT */
+    line-height: 42px;            /* Align text vertically */
+    position: sticky;
+    top: 54px;                    /* Stay below header */
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.12); /* Soft shadow below tab bar */
+}
+
+/* ----- TAB ITEMS ----- */
+.nav-item {
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #ececec;
+    border-right: 1px solid #bbb;
+    border-radius: 6px 6px 0 0;
+    letter-spacing: 0.3px;        /* Improve readability */
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Remove last border line at the right side */
+.nav-item:last-child {
+    border-right: none;
+}
+
+/* Hover effect */
+.nav-item:hover {
+    background: #f7f7f7;
+    color: #000;
+}
+
+/* Active selected tab */
+.nav-item.active {
+    background-color: #fff;
+    border-bottom: 3px solid #000;
+    font-weight: 700;
+    color: #000;
+}
+
+/* ===========================================================
+   📦 TAB CONTENT AREA
+=========================================================== */
+.tab-content { display: none; padding: 20px; margin-top: -5px; }
+.tab-content.active { display: block; }
+.section-title { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+
+/* ===========================================================
+   🎛 SELECTORS DROPDOWN
+=========================================================== */
+.control-row { display: flex; gap: 10px; margin-bottom: 15px; }
+.control-row label { font-weight: 600; margin-right: 6px; }
+.control-row select { padding: 4px 8px; }
+.notice { color: #b00020; font-size: 14px; margin-bottom: 10px; }
+
+/* ===========================================================
+   🏗 DRAWING / PLAN IMAGE
+=========================================================== */
+.image-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    flex-wrap: nowrap;
+}
+.image-box { flex: 1 1 50%; text-align: center; min-width: 0; }
+.image-box figcaption { font-weight: 600; margin-bottom: 8px; text-align: center; }
+.image-box img {
+    width: 100%;
+    height: auto;
+    max-height: 90vh;
+    object-fit: contain;
+    border: 2px solid #bbb;
+    border-radius: 4px;
+}
+
+/* ===========================================================
+   📊 KPI CARDS
+=========================================================== */
+.kpi-row { display: flex; justify-content: center; gap: 40px; margin-top: 20px; margin-bottom: 30px; }
+.kpi-box {
+    background: #ffffff;
+    width: 180px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px 15px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+    border: 1px solid #d7d7d7;
+}
+.kpi-box h3 { margin:0 0 5px; font-size:16px; color:#333; }
+.kpi-box strong { font-size: 15px; }
+.kpi-box.kpi-green  { border-top-color: #00b894; }
+.kpi-box.kpi-red    { border-top-color: #E63946; }
+.kpi-box.kpi-blue   { border-top-color: #1D4ED8; }
+.kpi-box.kpi-yellow { border-top-color: #f1c40f; }
+
+/* ===========================================================
+   📋 DATA TABLE (iframe tables — Shear/Liftcore)
+=========================================================== */
+.table-container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 100px;
+    overflow: auto;
+}
+
+.table-frame {
+    width: 100%;
+    height: 680px;
+    border: 1px solid #bbb;
+    background: #fff;
+    padding: 0;
+    box-shadow: none;
+}
+
+.table-shear {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13px;
+    margin: 0;
+}
+
+.table-title {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #555;
+}
+.table-shear th, .table-shear td {
+    border: 1px solid #ccc;
+    padding: 4px 6px;
+}
+.table-shear th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+/* ===========================================================
+   🪜 FORCE STAIRCASE TABLE DISPLAY
+=========================================================== */
+#stair_summary_container,
+#stair_table_container {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 90% !important;
+    min-height: 120px !important;
+    margin: 10px auto !important;
+    background: white !important;
+    border: 1px solid #aaa !important;
+    padding: 6px !important;
+}
+
+#stair_summary_container table,
+#stair_table_container table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 13px !important;
+}
+
+/* ===========================================================
+   🏗 BRAND HEADER (LOGO + TITLE)
+=========================================================== */
+
+.header-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #808080;
+    padding: 8px 20px;
+    position: sticky;   
+    top: 0;             
+    z-index: 1000;      
+}
+
+/* Logo stays LEFT using absolute positioning */
+.logo-title {
+    height: 40px;
+    width: auto;
+    position: absolute;
+    left: 20px;                      /* Distance from left edge */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Centered title */
+.header-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+}
+

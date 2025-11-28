@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC13 vs PC14 – Progress Claim Dashboard</title>
+
+    <!-- Screen CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Print CSS -->
+    <link rel="stylesheet" href="print.css" media="print">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- =========================================================
+     🚧 HEADER + PRINT BUTTON
+========================================================= -->
+<header class="header-brand">
+    <img src="png/logo_telford.png" class="logo-title">
+    <h1 class="header-title">PC13 vs PC14 Progress Claim Dashboard</h1>
+
+    <!-- 🖨 PRINT PDF BUTTON (MUST BE INSIDE HEADER) -->
+    <button id="print_mode_btn" class="print-btn">🖨 Print PDF Mode</button>
+</header>
+
+
+<!-- =========================================================
+     📌 TAB MENU
+========================================================= -->
+<nav class="navbar">
+    <div class="nav-item active" data-target="tab-slab">SLAB</div>
+    <div class="nav-item" data-target="pt_tab">PT</div>
+    <div class="nav-item" data-target="tab-column">COLUMN</div>
+    <div class="nav-item" data-target="mc_tab">MC</div>
+    <div class="nav-item" data-target="tab-poly">POLY</div>
+    <div class="nav-item" data-target="parapet_tab">PARAPET</div>
+
+    <div class="nav-item" id="tab-stair" data-target="stair_tab">STAIRCASE</div>
+    <div class="nav-item" data-target="lift_tab">LIFTCORE</div>
+
+    <!-- ✅ THIS WAS MISSING -->
+    <div class="nav-item" id="tab-shear" data-target="shear_tab">SHEARWALL</div>
+</nav>
+
+
+<!-- =========================================================
+     📌 TAB CONTENTS (One copy only!)
+========================================================= -->
+
+<section id="tab-slab" class="tab-content active">
+    <h2 class="section-title">Slab – PC13 vs PC14</h2>
+    <div class="control-row">
+        <div><label>Tower:</label><select id="slab_tower_select"></select></div>
+        <div><label>Level:</label><select id="slab_level_select"></select></div>
+    </div>
+    <div id="slab_notice" class="notice"></div>
+    <div class="image-row">
+        <figure class="image-box"><figcaption>PC13</figcaption><img id="slab_pc13_img"></figure>
+        <figure class="image-box"><figcaption>PC14</figcaption><img id="slab_pc14_img"></figure>
+    </div>
+</section>
+
+<section id="pt_tab" class="tab-content">
+    <h2 class="section-title">Post-Tension Slab – PC13 vs PC14</h2>
+
+    <div class="control-row">
+        <div><label>Tower:</label><select id="pt_tower_select"></select></div>
+        <div><label>Level:</label><select id="pt_level_select"></select></div>
+    </div>
+
+    <div id="pt_notice" class="notice"></div>
+
+    <div class="image-row">
+        <figure class="image-box"><figcaption>PC13</figcaption><img id="pt_pc13_img"></figure>
+        <figure class="image-box"><figcaption>PC14</figcaption><img id="pt_pc14_img"></figure>
+    </div>
+
+    <h3 class="table-title">📌 PT Summary Table 1</h3>
+    <div class="table-container" id="pt_summary_1"></div>
+
+    <h3 class="table-title">📌 PT Summary Table 2</h3>
+    <div class="table-container" id="pt_summary_2"></div>
+</section>
+
+
+<section id="tab-column" class="tab-content">
+    <h2 class="section-title">Column – PC13 vs PC14</h2>
+
+    <div class="control-row">
+        <div><label>Tower:</label><select id="column_tower_select"></select></div>
+        <div><label>Level:</label><select id="column_level_select"></select></div>
+    </div>
+
+    <div id="column_notice" class="notice"></div>
+
+    <div class="image-row">
+        <figure class="image-box"><figcaption>PC13</figcaption><img id="column_pc13_img"></figure>
+        <figure class="image-box"><figcaption>PC14</figcaption><img id="column_pc14_img"></figure>
+    </div>
+
+    <h3 class="table-title">Column Progress Summary</h3>
+    <div class="table-container" id="column_summary_container"></div>
+</section>
+
+
+
+
+<section id="mc_tab" class="tab-content">
+    <h2 class="section-title">Moment Coupler (MC)</h2>
+    <div class="control-row">
+        <div><label>Tower:</label><select id="mc_tower_select"></select></div>
+    </div>
+    <div class="image-row">
+        <figure class="image-box"><figcaption>PC13</figcaption><img id="mc_pc13_img"></figure>
+        <figure class="image-box"><figcaption>PC14</figcaption><img id="mc_pc14_img"></figure>
+    </div>
+</section>
+
+<section id="tab-poly" class="tab-content">
+    <h2 class="section-title">Polyesterene – PC13 vs PC14</h2>
+    <div class="control-row">
+        <div><label>Tower:</label><select id="poly_tower_select"></select></div>
+        <div><label>Level:</label><select id="poly_level_select"></select></div>
+    </div>
+    <div class="image-row">
+        <figure class="image-box"><figcaption>PC13</figcaption><img id="poly_pc13_img"></figure>
+        <figure class="image-box"><figcaption>PC14</figcaption><img id="poly_pc14_img"></figure>
+    </div>
+</section>
+
+<section id="parapet_tab" class="tab-content">
+    <h2 class="section-title">Parapet Wall (PC13 vs PC14)</h2>
+
+    <div class="control-row">
+        <select id="parapet_tower_select"></select>
+        <select id="parapet_level_select"></select>
+    </div>
+
+    <div class="image-row">
+        <figure class="image-box"><figcaption>PC13</figcaption><img id="parapet_pc13_img"></figure>
+        <figure class="image-box"><figcaption>PC14</figcaption><img id="parapet_pc14_img"></figure>
+    </div>
+
+    <h3 class="table-title">📋 Parapet Progress Summary</h3>
+    <div class="table-container" id="parapet_summary_container"></div>
+</section>
+
+
+<section id="stair_tab" class="tab-content">
+    <h2 class="section-title">Staircase Location & Progress</h2>
+    <div class="image-row">
+        <img src="png/Staircase_T3.png"><img src="png/Staircase_T4.png">
+    </div>
+    <div id="stair_kpi_cards" class="kpi-row"></div>
+    <h3 class="table-title">Table 1 — Staircase Claim Summary</h3>
+    <iframe src="data/staircase_summary.html" class="table-frame"></iframe>
+    <h3 class="table-title">Table 2 — Staircase Entry List</h3>
+    <iframe src="data/staircase_table.html" class="table-frame"></iframe>
+</section>
+
+<section id="lift_tab" class="tab-content">
+    <h2 class="section-title">Lift Core Location</h2>
+    <div class="image-row"><img src="png/Liftcore_T4.png"></div>
+    <div class="kpi-row" id="liftcore_kpis"></div>
+    <iframe src="data/liftcore_table.html" class="table-frame"></iframe>
+</section>
+
+
+<section id="shear_tab" class="tab-content">
+    <h2 class="section-title">Shear Wall – PC13 vs PC14</h2>
+
+    <div class="control-row">
+        <div>
+            <label>Tower:</label>
+            <select id="shear_tower_select"></select>
+        </div>
+        <div>
+            <label>Level:</label>
+            <select id="shear_level_select"></select>
+        </div>
+    </div>
+
+    <div class="image-row">
+        <figure class="image-box">
+            <figcaption>PC13</figcaption>
+            <img id="shear_pc13_img">
+        </figure>
+
+        <figure class="image-box">
+            <figcaption>PC14</figcaption>
+            <img id="shear_pc14_img">
+        </figure>
+    </div>
+    <div id="shearwall_kpi_cards" class="kpi-row"></div>
+    <h3 class="table-title">📋 Shear Wall Summary</h3>
+    <div class="table-container" id="shearwall_summary_container"></div>
+    <div id="print_shearwall_table" style="display:none;"></div>
+</section>
+
+
+
+<!-- =========================================================
+     👇 JAVASCRIPT
+========================================================= -->
+<script src="script_ui.js"></script>
+<script src="script_print.js"></script>
+</body>
+</html>
