@@ -1,0 +1,10 @@
+tower,liftcore_id,level_start,level_finish,bill_ref,shear_pc13,shear_pc14
+T4,center,GF,L1,SOW5,100%,100%
+T4,center,L1,L1M,SOW5,100%,100%
+T4,center,L1M,L2,SOW6,100%,100%
+T4,center,L2,L3,SOW6,100%,100%
+T4,center,L1,L1M,SOW2,0%,0%
+T4,ST14,L1,L1M,SOW2,66%,66%
+T4,Cargo Lift,L1,L1M,SOW5,100%,100%
+T4,ST16,L1,L1M,SOW2,100%,100%
+T4,ST16,L1M,L2,SOW2,100%,100%

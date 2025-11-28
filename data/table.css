@@ -1,0 +1,25 @@
+table.dataframe {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Roboto", sans-serif;
+    font-size: 13px;
+    background: white;
+}
+
+table.dataframe th {
+    background: #f1f1f1;
+    font-weight: 600;
+    text-align: center;
+    padding: 6px;
+    border: 1px solid #ccc;
+}
+
+table.dataframe td {
+    padding: 4px 6px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table.dataframe tbody tr:nth-child(even) {
+    background: #fafafa;
+}
